@@ -111,6 +111,7 @@
   </div>
 
 
+  <!--CHECKOUT-->
   <div class="checkout">
     <h1>Checkout</h1>
     <table>
@@ -136,6 +137,65 @@
     </table>
   </div>
 
+  <div class="pembayaran">
+    <form action="">
+    <table>
+      <tr>
+        <th colspan="2">Pembayaran</th>
+      </tr>
+      <tr>
+        <td>Total:</td>
+        <td><input type="text" name="total" id="Total" value="" placeholder="Total Pesanan" class="formTotal-control" required maxlength="40" minlength="1"></td>
+      </tr>
+      <tr>
+        <td>Cash:</td>
+        <td><input type="text" name="cash" id="Cash" value="" placeholder="Cash" class="formCash-control" required maxlength="40" minlength="1"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <input type="button" value="bayar"  onclick="bayar()">
+
+          <p id="result-Total"></p>
+          <p id="result-Cash"></p>
+        </td>
+      </tr>
+    </table>
+  </form>
+  </div>
+
+  <!--<div id="aritmatika">
+    <script>
+      var total = document.getElementById("Total");
+      var cash = document.getElementById("Cash");
+
+      var pengurangan = cash - total;
+
+      document.getElementById('aritmatika').innerHTML = pengurangan;
+    </script>
+  </div>--->
+
+  <script>
+    function bayar() {
+    var total = document.getElementById("Total").value ;
+    var cash = document.getElementById("Cash").value ;
+
+    if (total !="" && cash !=""){
+      document.getElementById("result-Total").innerHTML = total
+      document.getElementById("result-Cash").innerHTML = cash
+      return True;
+    }else{
+      alert('Harap isi Total dan Cash Anda');
+    }
+    }
+
+    function subcription(){
+      a=Number(document.getElementById("Total").value);
+      b=Number(document.getElementById("Cash").value);
+      c=b-a;
+      document.my_cal.bayar.value=c;
+    }
+  </script>
      
   <!-- 
     - #FOOTER
